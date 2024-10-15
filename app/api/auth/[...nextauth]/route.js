@@ -13,7 +13,17 @@ const handler = NextAuth({
 
     },
     async signIn({ profile }) {
+        try{
 
+            // check if the user already exist 
+
+            // if not create a new user 
+
+            return true;
+        }catch(error){
+            console.log(error)
+            return false;
+        }
     }
 })
 
