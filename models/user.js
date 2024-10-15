@@ -1,7 +1,7 @@
 import { Schema, model, models } from 'mongoose'
 import Email from 'next-auth/providers/email'
 
-const UserSchema = newSchema({
+const UserSchema = new Schema({
     email: {
         type: String,
         unique: [true, "Email already exist !"],
