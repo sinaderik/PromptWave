@@ -13,3 +13,9 @@ const UserSchema = newSchema({
         match: [/^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/, "Username invalid, it should contain 8-20 alphanumeric letters and be unique!"]
     },
 })
+
+// to prevent re-compilation of the model.
+// If models.User doesn’t exist, it creates a new model called "User" using the UserSchema.
+const User = models.User || model("User", UserSchema);
+
+export default User;
